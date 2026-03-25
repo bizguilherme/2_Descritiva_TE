@@ -2,6 +2,7 @@
 title: "Estatística Descritiva"
 format: revealjs
 editor: visual
+code-fold: true
 ---
 
 ## Áreas da Estatística
@@ -117,11 +118,6 @@ set_caption(alt, "Alturas de espigas (cm) de híbridos de milho para a região d
 -   **Coluna indicadora**: mostra natureza do conteúdo de cada linha.
 :::
 
-------------------------------------------------------------------------
-
-![](index_files/images/tabela.png)
-
-------------------------------------------------------------------------
 
 ### Distribuições de frequências de variáveis qualitativas e representações gráficas
 
@@ -368,17 +364,17 @@ plot(tab,col="green4",density=50,border="black",xlab = "Altura de Plantas",ylab=
 
 -   As medidas descritivas auxiliam a análise do comportamento dos dados. Tais dados são provenientes de uma população ou amostra.
 
-    +----------------------+----------------------+-----------------------+
-    | Medidas              | Parâmetros           | -   Estatísticas      |
-    +:====================:+:====================:+:=====================:+
-    | Nº de elementos      | N                    | n                     |
-    +----------------------+----------------------+-----------------------+
-    | Média                | $\mu$                | $\bar{x}$             |
-    +----------------------+----------------------+-----------------------+
-    | Variância            | $\sigma^2$           | $s^2$                 |
-    +----------------------+----------------------+-----------------------+
-    | Desvio Padrão        | $\sigma$             | $s$                   |
-    +----------------------+----------------------+-----------------------+
+    +---------------------+---------------------+----------------------+
+    | Medidas             | Parâmetros          | -   Estatísticas     |
+    +:===================:+:===================:+:====================:+
+    | Nº de elementos     | N                   | n                    |
+    +---------------------+---------------------+----------------------+
+    | Média               | $\mu$               | $\bar{x}$            |
+    +---------------------+---------------------+----------------------+
+    | Variância           | $\sigma^2$          | $s^2$                |
+    +---------------------+---------------------+----------------------+
+    | Desvio Padrão       | $\sigma$            | $s$                  |
+    +---------------------+---------------------+----------------------+
 :::
 
 ------------------------------------------------------------------------
@@ -1089,24 +1085,6 @@ $$
 
     -   Os percentis de ordens 25, 50 e 75, ($P_{25}=Q_1$, $P_{50}=Q_2$ e $P_{75}=Q_3$), são os quartis.
 :::
-
-------------------------------------------------------------------------
-
-<br>
-
-![](index_files/images/quartis.png){fig-align="center"}
-
-------------------------------------------------------------------------
-
-<br>
-
-![](index_files/images/decis.png){fig-align="center"}
-
-------------------------------------------------------------------------
-
-<br>
-
-![](index_files/images/percentis.png){fig-align="center"}
 
 ------------------------------------------------------------------------
 

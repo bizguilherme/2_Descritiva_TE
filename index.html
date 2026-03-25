@@ -243,8 +243,11 @@
 <h2>Importando os dados no software R</h2>
 <p><br></p>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a>dados<span class="ot">=</span><span class="fu">read.table</span>(<span class="st">"https://pessoal.uel.br/biz/wp-content/uploads/2025/06/dados_milho.txt"</span>,<span class="at">head=</span>T)</span>
 <span id="cb1-2"><a href=""></a><span class="fu">head</span>(dados)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Hibrido Rendimento Ciclo Altura_planta Altura_espiga        Grao Resistencia
 1       1       6388    65           242           103     dentado           r
@@ -316,13 +319,6 @@
 <li><p><strong>Coluna indicadora</strong>: mostra natureza do conteúdo de cada linha.</p></li>
 </ul>
 </div>
-</section>
-<section class="slide level2">
-
-
-<img data-src="index_files/images/tabela.png" class="r-stretch"></section>
-<section class="slide level2">
-
 <h3 id="distribuições-de-frequências-de-variáveis-qualitativas-e-representações-gráficas">Distribuições de frequências de variáveis qualitativas e representações gráficas</h3>
 <p><br></p>
 <div style="text-align: justify;font-size: 0.9em;">
@@ -354,16 +350,22 @@
 \]</span></p>
 </div>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="fu">require</span>(epiDisplay)</span>
 <span id="cb3-2"><a href=""></a><span class="fu">tab1</span>(<span class="fu">factor</span>(dados<span class="sc">$</span>Resistencia,<span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"r"</span>,<span class="st">"mr"</span>,<span class="st">"ms"</span>,<span class="st">"s"</span>)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 </section>
 <section class="slide level2">
 
 <h3 id="gráficos-para-variáveis-qualitativas---colunas">Gráficos para variáveis qualitativas - Colunas</h3>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a><span class="fu">barplot</span>(<span class="fu">table</span>(dados<span class="sc">$</span>Resistencia)[<span class="fu">c</span>(<span class="st">"r"</span>,<span class="st">"mr"</span>,<span class="st">"ms"</span>,<span class="st">"s"</span>)],<span class="at">xlab=</span><span class="st">"Resistência à ferrugem"</span>,<span class="at">ylab=</span><span class="st">"Frequências"</span>,<span class="at">col=</span><span class="st">"green4"</span>,<span class="at">density=</span><span class="dv">50</span>,<span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">12</span>))</span>
 <span id="cb4-2"><a href=""></a><span class="fu">abline</span>(<span class="at">h=</span><span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 
 </div>
 <img data-src="index_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><div style="text-align: justify;font-size: 0.8em;">
@@ -374,8 +376,11 @@
 
 <h3 id="gráficos-para-variáveis-qualitativas---barras">Gráficos para variáveis qualitativas - Barras</h3>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="fu">barplot</span>(<span class="fu">table</span>(dados<span class="sc">$</span>Resistencia)[<span class="fu">c</span>(<span class="st">"r"</span>,<span class="st">"mr"</span>,<span class="st">"ms"</span>,<span class="st">"s"</span>)],<span class="at">ylab=</span><span class="st">"Resistência à ferrugem"</span>,<span class="at">xlab=</span><span class="st">"Frequências"</span>,<span class="at">col=</span><span class="st">"green4"</span>,<span class="at">density=</span><span class="dv">50</span>,<span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">12</span>),<span class="at">horiz =</span> T)</span>
 <span id="cb5-2"><a href=""></a><span class="fu">abline</span>(<span class="at">v=</span><span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 
 </div>
 <img data-src="index_files/figure-revealjs/unnamed-chunk-6-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><div style="text-align: justify;font-size: 0.8em;">
@@ -386,10 +391,13 @@
 
 <h3 id="gráficos-para-variáveis-qualitativas---setores">Gráficos para variáveis qualitativas - Setores</h3>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a>resis<span class="ot">=</span><span class="fu">table</span>(dados<span class="sc">$</span>Resistencia)[<span class="fu">c</span>(<span class="st">"r"</span>,<span class="st">"mr"</span>,<span class="st">"ms"</span>,<span class="st">"s"</span>)]</span>
 <span id="cb6-2"><a href=""></a><span class="fu">names</span>(resis)<span class="ot">=</span><span class="fu">paste</span>(<span class="fu">c</span>(<span class="st">"resistentes"</span>,<span class="st">"mod. resistentes"</span>,</span>
 <span id="cb6-3"><a href=""></a>                     <span class="st">"mod. susceptível"</span>,<span class="st">"susceptível"</span>),<span class="fu">round</span>(<span class="dv">100</span><span class="sc">*</span>resis<span class="sc">/</span><span class="fu">sum</span>(resis),<span class="dv">2</span>),<span class="st">"%"</span>) </span>
 <span id="cb6-4"><a href=""></a><span class="fu">pie</span>(resis,<span class="at">col=</span><span class="fu">c</span>(<span class="st">"green4"</span>,<span class="st">"blue"</span>,<span class="st">"white"</span>,<span class="st">"black"</span>),<span class="at">density=</span><span class="fu">c</span>(<span class="dv">100</span>,<span class="dv">100</span>,<span class="dv">80</span>,<span class="dv">20</span>),<span class="at">border=</span><span class="st">"black"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 
 </div>
 <img data-src="index_files/figure-revealjs/unnamed-chunk-7-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><div style="text-align: justify;font-size: 0.8em;">
@@ -458,9 +466,12 @@
 \end{array}\]</span></p>
 </div>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="fu">require</span>(fdth)</span>
 <span id="cb7-2"><a href=""></a>tab<span class="ot">=</span><span class="fu">fdt</span>(dados<span class="sc">$</span>Rendimento,<span class="at">start =</span> <span class="dv">3973</span>,<span class="at">end =</span> <span class="dv">6393</span>,<span class="at">h =</span> <span class="dv">484</span>)</span>
 <span id="cb7-3"><a href=""></a>tab</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 </section>
 <section class="slide level2">
@@ -482,16 +493,21 @@
 <section id="histograma" class="slide level2">
 <h2>Histograma</h2>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a>s<span class="ot">=</span><span class="fu">seq</span>(<span class="fu">min</span>(dados<span class="sc">$</span>Rendimento),<span class="dv">6393</span>,<span class="dv">484</span>)</span>
 <span id="cb8-2"><a href=""></a><span class="fu">hist</span>(dados<span class="sc">$</span>Rendimento,<span class="at">breaks=</span>s,<span class="at">xaxt=</span><span class="st">"n"</span>,<span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">14</span>),<span class="at">border=</span><span class="st">"black"</span>,<span class="at">xlab=</span><span class="st">"Rendimento médio (kg/ha)"</span>,<span class="at">density=</span><span class="dv">30</span>, <span class="at">las=</span><span class="dv">1</span>,<span class="at">ylab=</span><span class="st">"Densidade de frequências"</span>,<span class="at">col=</span><span class="st">"green4"</span>,<span class="at">main=</span><span class="st">""</span>)</span>
 <span id="cb8-3"><a href=""></a><span class="fu">axis</span>(<span class="dv">1</span>,s,<span class="at">line=</span><span class="sc">-</span>.<span class="dv">6</span>)</span>
 <span id="cb8-4"><a href=""></a><span class="fu">abline</span>(<span class="at">h=</span><span class="dv">0</span>,<span class="at">cex=</span><span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 
 </div>
 <img data-src="index_files/figure-revealjs/unnamed-chunk-9-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="polígono-de-frequências" class="slide level2">
 <h2>Polígono de frequências</h2>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a>tab<span class="ot">=</span><span class="fu">hist</span>(dados<span class="sc">$</span>Rendimento,<span class="at">breaks=</span>s,<span class="at">plot=</span>F)</span>
 <span id="cb9-2"><a href=""></a>pontosmedios<span class="ot">=</span><span class="fu">c</span>(<span class="dv">3731</span>,tab<span class="sc">$</span>mids,<span class="dv">6635</span>)</span>
 <span id="cb9-3"><a href=""></a>fr<span class="ot">=</span><span class="fu">c</span>(<span class="dv">0</span>,tab<span class="sc">$</span>counts,<span class="dv">0</span>)</span>
@@ -499,6 +515,7 @@
 <span id="cb9-5"><a href=""></a><span class="fu">axis</span>(<span class="dv">1</span>,pontosmedios,<span class="at">line=</span><span class="sc">-</span>.<span class="dv">6</span>)</span>
 <span id="cb9-6"><a href=""></a><span class="fu">axis</span>(<span class="dv">2</span>,tab<span class="sc">$</span>couts,<span class="at">las=</span><span class="dv">1</span>)</span>
 <span id="cb9-7"><a href=""></a><span class="fu">abline</span>(<span class="at">h=</span><span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 
 </div>
 <img data-src="index_files/figure-revealjs/unnamed-chunk-10-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
@@ -535,13 +552,19 @@
 \]</span></p>
 </div>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a>tab<span class="ot">=</span><span class="fu">fdt</span>(dados<span class="sc">$</span>Altura_planta,<span class="at">start=</span><span class="dv">235</span>,<span class="at">end=</span><span class="dv">283</span>,<span class="at">h =</span> <span class="dv">8</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 </section>
 <section id="histograma---exercício-3" class="slide level2">
 <h2>Histograma - Exercício 3</h2>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a><span class="fu">plot</span>(tab,<span class="at">col=</span><span class="st">"green4"</span>,<span class="at">density=</span><span class="dv">50</span>,<span class="at">border=</span><span class="st">"black"</span>,<span class="at">xlab =</span> <span class="st">"Altura de Plantas"</span>,<span class="at">ylab=</span><span class="st">"Freq. Abs."</span>,<span class="at">las=</span><span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 
 </div>
 <img data-src="index_files/figure-revealjs/unnamed-chunk-12-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
@@ -553,11 +576,11 @@
 <li><p>Uma outra maneira de resumir os dados de uma variável quantitativa, além de tabelas e gráficos, são apresenta-los na forma de valores numéricos, denominados medidas descritivas.</p>
 <p><br></p></li>
 <li><p>As medidas descritivas auxiliam a análise do comportamento dos dados. Tais dados são provenientes de uma população ou amostra.</p>
-<table class="caption-top" style="width:97%;">
+<table class="caption-top" style="width:93%;">
 <colgroup>
+<col style="width: 30%">
+<col style="width: 30%">
 <col style="width: 31%">
-<col style="width: 31%">
-<col style="width: 33%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -714,9 +737,12 @@
 </div>
 </div>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a>resis<span class="ot">=</span><span class="fu">scan</span>(<span class="at">dec=</span><span class="st">","</span>, <span class="at">text=</span> <span class="st">"</span></span>
 <span id="cb12-2"><a href=""></a><span class="st">0,92 1,80 1,00 0,94 0,76 0,72 0,50 1,10 0,99 0,70 0,73 0,89 0,64 0,76 0,84 0,63 0,75 0,83 0,82 0,59 0,58 0,54 0,87 0,80 0,82 0,64 0,76 1,04 0,73 1,04 0,67 0,76 0,75 0,61 0,69 0,52"</span>)</span>
 <span id="cb12-3"><a href=""></a><span class="fu">mean</span>(resis)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 </div>
 </section>
@@ -744,9 +770,12 @@
 \end{array}
 \]</span></p>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a>tabres<span class="ot">=</span>fdth<span class="sc">::</span><span class="fu">fdt</span>(resis,<span class="at">start =</span> .<span class="dv">5</span>,<span class="at">h=</span>.<span class="dv">22</span>,<span class="at">end=</span><span class="fl">1.82</span>)</span>
 <span id="cb13-2"><a href=""></a>tabres</span>
 <span id="cb13-3"><a href=""></a><span class="fu">mean</span>(tabres)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 </div>
 </section>
@@ -826,7 +855,10 @@
 \end{array}
 \]</span></p>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href=""></a>fdth<span class="sc">::</span><span class="fu">mfv</span>(tabres)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 </div>
 </section>
@@ -954,7 +986,10 @@
 </div>
 </div>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a><span class="fu">median</span>(resis)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 </div>
 </section>
@@ -993,7 +1028,10 @@
 \end{array}
 \]</span></p>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a><span class="fu">median</span>(tabres)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 </div>
 </section>
@@ -1302,6 +1340,8 @@
 </div>
 </div>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href=""></a><span class="do">## Amplitude</span></span>
 <span id="cb17-2"><a href=""></a><span class="fu">max</span>(resis)<span class="sc">-</span><span class="fu">min</span>(resis)</span>
 <span id="cb17-3"><a href=""></a></span>
@@ -1320,6 +1360,7 @@
 <span id="cb17-16"><a href=""></a><span class="co"># Coeficiente de variação</span></span>
 <span id="cb17-17"><a href=""></a></span>
 <span id="cb17-18"><a href=""></a>raster<span class="sc">::</span><span class="fu">cv</span>(resis)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 </div>
 </section>
@@ -1347,6 +1388,8 @@
 \end{array}
 \]</span></p>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href=""></a>resis <span class="ot">=</span> <span class="fu">scan</span>(<span class="at">dec =</span> <span class="st">","</span>, <span class="at">text =</span> <span class="st">"</span></span>
 <span id="cb18-2"><a href=""></a><span class="st">0,92 1,80 1,00 0,94 0,76 0,72 0,50 1,10 0,99 0,70 0,73 0,89 0,64 0,76 0,84 0,63 0,75 0,83 0,82 0,59 0,58 0,54 0,87 0,80 0,82 0,64 0,76 1,04 0,73 1,04 0,67 0,76 0,75 0,61 0,69 0,52"</span>)</span>
 <span id="cb18-3"><a href=""></a>tabres<span class="ot">=</span>fdth<span class="sc">::</span><span class="fu">fdt</span>(resis,<span class="at">start =</span> .<span class="dv">5</span>,<span class="at">h=</span>.<span class="dv">22</span>,<span class="at">end=</span><span class="fl">1.82</span>)</span>
@@ -1358,6 +1401,7 @@
 <span id="cb18-9"><a href=""></a></span>
 <span id="cb18-10"><a href=""></a><span class="do">#### Coeficiente de variação</span></span>
 <span id="cb18-11"><a href=""></a><span class="dv">100</span><span class="sc">*</span><span class="fu">sd</span>(tabres)<span class="sc">/</span><span class="fu">mean</span>(tabres)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 </div>
 </section>
@@ -1419,21 +1463,6 @@
 </ul>
 </div>
 </section>
-<section class="slide level2">
-
-<p><br></p>
-
-<img data-src="index_files/images/quartis.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section class="slide level2">
-
-<p><br></p>
-
-<img data-src="index_files/images/decis.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section class="slide level2">
-
-<p><br></p>
-
-<img data-src="index_files/images/percentis.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section class="slide level2">
 
 <h3 id="percentis">Percentis</h3>
@@ -1522,7 +1551,10 @@
 </div>
 </div>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href=""></a><span class="fu">quantile</span>(resis,<span class="at">probs=</span><span class="fu">c</span>(<span class="fl">0.25</span>,.<span class="dv">5</span>,.<span class="dv">75</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 </section>
 <section class="slide level2">
@@ -1602,6 +1634,8 @@
 
 <h3 id="box-plot">Box-plot</h3>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href=""></a>a<span class="ot">=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">10</span>)</span>
 <span id="cb20-2"><a href=""></a><span class="fu">boxplot</span>(a,<span class="at">ylim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">12</span>),<span class="at">xlim=</span><span class="fu">c</span>(<span class="fl">0.4</span>,<span class="fl">1.7</span>),<span class="at">axes=</span>F)</span>
 <span id="cb20-3"><a href=""></a><span class="fu">points</span>(<span class="dv">1</span>,<span class="dv">12</span>,<span class="at">pch=</span><span class="dv">19</span>)</span>
@@ -1619,6 +1653,7 @@
 <span id="cb20-15"><a href=""></a><span class="fu">text</span>(<span class="fl">1.57</span>,<span class="fl">3.5</span>,<span class="st">"Quartil 1"</span>)</span>
 <span id="cb20-16"><a href=""></a><span class="fu">text</span>(<span class="fl">1.57</span>,<span class="dv">0</span>,<span class="st">"Obs min &gt; LI"</span>)</span>
 <span id="cb20-17"><a href=""></a><span class="fu">arrows</span>(<span class="fl">1.4</span>,<span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">3.5</span>,<span class="dv">5</span>,<span class="fl">6.5</span>,<span class="dv">10</span>,<span class="dv">12</span>),<span class="fl">1.27</span>,<span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">3.5</span>,<span class="dv">5</span>,<span class="fl">6.5</span>,<span class="dv">10</span>,<span class="dv">12</span>),<span class="at">length =</span> .<span class="dv">07</span>,<span class="at">lwd=</span><span class="fl">1.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 
 </div>
 <img data-src="index_files/figure-revealjs/unnamed-chunk-26-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
@@ -1665,9 +1700,12 @@
 </div>
 </div>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href=""></a>resp<span class="ot">=</span><span class="fu">c</span>(<span class="dv">2210</span> , <span class="dv">2255</span> , <span class="dv">2350</span> , <span class="dv">2380</span> , <span class="dv">2380</span> , <span class="dv">2390</span>,</span>
 <span id="cb21-2"><a href=""></a>       <span class="dv">2420</span> , <span class="dv">2440</span> , <span class="dv">2450</span> , <span class="dv">2550</span> , <span class="dv">2630</span> , <span class="dv">2825</span>)</span>
 <span id="cb21-3"><a href=""></a><span class="fu">boxplot</span>(resp)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 </div>
 </section>
@@ -1746,7 +1784,10 @@
 </div>
 </div>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href=""></a><span class="fu">boxplot</span>(resis)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure>
