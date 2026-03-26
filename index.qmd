@@ -118,6 +118,7 @@ set_caption(alt, "Alturas de espigas (cm) de híbridos de milho para a região d
 -   **Coluna indicadora**: mostra natureza do conteúdo de cada linha.
 :::
 
+------------------------------------------------------------------------
 
 ### Distribuições de frequências de variáveis qualitativas e representações gráficas
 
